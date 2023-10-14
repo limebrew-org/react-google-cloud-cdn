@@ -58,6 +58,24 @@ jobs:
 
     - name: Test 
       run: ls -la
+
+    - name: Setup gcloud Authentication
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GCLOUD_ENCODED_API_KEY_LIMEBREW_DEV }}'
+
+    - name: 'Set up Cloud CLI'
+      uses: 'google-github-actions/setup-gcloud@v1'
+
+    - name: Deploy to Google Cloud CDN
+      run: |
+        gcloud config set project ${{ secrets.GCLOUD_DEPLOYMENT_PROJECT_ID }}
+        cd build/
+        gsutil -m cp -r . gs://${{ secrets.GCLOUD_DEPLOYMENT_BUCKET_NAME }}
+  
+     
+
+      
         
 
       
