@@ -3,7 +3,7 @@
 SDK_VERSION=405.0.0
 SDK_FILENAME=google-cloud-cli-${SDK_VERSION}-linux-x86_64.tar.gz
 SDK_TMP_FILE="/tmp/google-cloud-cli.tar.gz"
-SDK_EXTRACTED_PATH="/tmp/google-cloud-cli"
+SDK_EXTRACTED_PATH="/home/saptak/google-cloud-cli"
 SDK_DIR_NAME="google-cloud-sdk"
 
 #? Create the temporary directory
